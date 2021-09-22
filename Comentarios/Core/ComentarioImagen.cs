@@ -30,7 +30,7 @@ namespace Comentarios.Core {
 
         public override string ToString()
         {
-            return $"{base.ToString()} \"{this.URL}\"";
+            return $"{base.ToString()} Comprueba la URL: {this.URL}";
         }
     }
 }

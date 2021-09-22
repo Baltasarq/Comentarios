@@ -14,7 +14,7 @@ namespace Comentarios.Core {
         }
 
         /// <summary>El texto del comentario.</summary>
-        public string Texto {
+        public new string Texto {
             get {
                 return base.Texto;
             }

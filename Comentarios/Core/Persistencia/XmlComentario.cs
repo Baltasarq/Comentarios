@@ -11,34 +11,34 @@ namespace Comentarios.Core.Persistencia {
         /// <param name="c">El comentario a convertir.</param>
         public XmlComentario(Comentario c)
         {
-            this.Comentario = c;
+            this.Documento = c;
         }
 
-        /// <summary>El objeto <see cref="Comentario"/> sobre el que se trabaja.</summary>
-        public Comentario Comentario { get; }
+        /// <summary>El objeto <see cref="Documento"/> sobre el que se trabaja.</summary>
+        public Comentario Documento { get; }
 
         /// <summary>
         /// Genera una estructura XML con el comentario dado.
         /// </summary>
         /// <returns>
         /// Un objeto <see cref="XElement"/> con toda la info
-        /// del <see cref="Comentario"/> dado.
+        /// del <see cref="Documento"/> dado.
         /// </returns>
         public XElement ToXml()
         {
             return new XElement( TagComentario,
-                        new XElement( TagTipo, this.Comentario.GetTipo().ToString().ToLower() ),
-                        new XElement( TagPos, this.Comentario.Posicion.ToString() ),
-                        new XElement( TagAutor, this.Comentario.Autor ),
-                        new XElement( TagContenido, this.Comentario.Contenido ) );
+                        new XElement( TagTipo, this.Documento.GetTipo().ToString().ToLower() ),
+                        new XElement( TagPos, this.Documento.Posicion.ToString() ),
+                        new XElement( TagAutor, this.Documento.Autor ),
+                        new XElement( TagContenido, this.Documento.Contenido ) );
         }
 
         /// <summary>
-        /// Guarda el XML del <see cref="Comentario"/>
+        /// Guarda el XML del <see cref="Documento"/>
         /// relacionado en un archivo dado.
         /// </summary>
         /// <param name="nf">El nombre del archivo a crear.</param>
-        public void GuardaXml(string nf)
+        public void Guarda(string nf)
         {
             this.ToXml().Save( nf );
         }

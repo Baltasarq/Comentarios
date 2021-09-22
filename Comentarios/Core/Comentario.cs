@@ -52,7 +52,7 @@ namespace Comentarios.Core {
         /// <summary>
         /// Crea un nuevo comentario.
         /// </summary>
-        /// <param name="tipo">El <see cref="Comentario.Tipo" de comentario./></param>
+        /// <param name="tipo">El <see cref="Comentarios.Core.Comentario.Tipo" de comentario./></param>
         /// <param name="pos">La posición en el texto existente.</param>
         /// <param name="contenido">El contenido del comentario.</param>
         /// <param name="autor">El autor del comentario.</param>

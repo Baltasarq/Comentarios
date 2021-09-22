@@ -2,6 +2,7 @@
 
 
 namespace Comentarios.Core {
+    using System.Text;
     using System.Collections.Generic;
     
     
@@ -16,7 +17,7 @@ namespace Comentarios.Core {
         /// <summary>
         /// Inserta un nuevo comentario.
         /// </summary>
-        /// <param name="c">El objeto <see cref="Comentario"/>.</param>
+        /// <param name="c">El objeto <see cref="Comentarios.Core.Documento"/>.</param>
         public void Inserta(Comentario c)
         {
             this.lista.Add( c );
@@ -32,8 +33,21 @@ namespace Comentarios.Core {
         /// <summary>Devuelve todos los comentarios en un nuevo array.</summary>
         public Comentario[] Todos {
             get {
+                this.lista.Sort( (c1, c2) => c1.Posicion - c2.Posicion );
                 return this.lista.ToArray();
             }
+        }
+
+        public override string ToString()
+        {
+            var toret = new StringBuilder();
+
+            foreach (Comentario c in this.lista)
+            {
+                toret.AppendLine( c.ToString() );
+            }
+
+            return toret.ToString();
         }
 
         List<Comentario> lista;
